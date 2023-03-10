@@ -308,7 +308,7 @@ impl ESKF {
     fn uncertainty3(&self, start: usize) -> Vector3<f32> {
         self.covariance
             .diagonal()
-            .fixed_view_mut::<3, 1>(start, 0)
+            .fixed_view::<3, 1>(start, 0)
             .map(|var| var.sqrt())
     }
 
